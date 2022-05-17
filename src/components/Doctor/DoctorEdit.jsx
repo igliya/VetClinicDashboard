@@ -10,7 +10,7 @@ const DoctorEdit = () => {
     React.useEffect(() => {
         const arr = window.location.pathname.split('/')
         const id = arr[arr.length - 1];
-        fetch('http://practice.igliya.ru/api/v1/doctors/' + id)
+        fetch('http://practice-back.igliya.ru/api/v1/doctors/' + id)
             .then(response => response.json())
             .then(r => setData(r));
     }, [])
