@@ -7,7 +7,7 @@ const PopularComponent = () => {
     const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
-        fetch('http://practice-back.igliya.ru/api/v1/popular')
+        fetch('http://practice.igliya.ru/api/v1/popular')
             .then(response => response.json())
             .then(r => setData(r));
     }, []);

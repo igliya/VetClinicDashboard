@@ -6,7 +6,7 @@ const ReturnComponent = () => {
     const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
-        fetch('http://practice-back.igliya.ru/api/v1/returns')
+        fetch('http://practice.igliya.ru/api/v1/returns')
             .then(response => response.json())
             .then(r => setData(r));
     }, []);
