@@ -5,20 +5,33 @@ import jsonServerProvider from 'ra-data-json-server';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
 import russianMessages from 'ra-language-russian';
 
-import authProvider from "./AuthProvider";
 import {MyLayout} from "./components/Layout";
 import {AverageComponent, DoctorEdit, DoctorList, PopularComponent, ReturnComponent} from "./components";
+import { createTheme } from '@mui/material/styles';
 
 const dataProvider = jsonServerProvider('http://practice-back.igliya.ru/api/v1');
 const i18nProvider = polyglotI18nProvider(() => russianMessages, 'ru');
 
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#6174d1'
+      },
+      secondary: {
+        light: '#6174d1',
+        main: '#6174d1',
+        contrastText: '#ffffff',
+      }
+    }
+  });
+
 const App = () => {
     return (
         <Admin disableTelemetry
+               theme={theme}
                layout={MyLayout}
                dataProvider={dataProvider}
-               i18nProvider={i18nProvider}
-               authProvider={authProvider}>
+               i18nProvider={i18nProvider}>
             <Resource name="doctors"
                       list={DoctorList}
                       edit={DoctorEdit}/>

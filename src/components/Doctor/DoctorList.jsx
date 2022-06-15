@@ -10,7 +10,7 @@ const DoctorList = () => {
                 <TextField source="last_name" label="Фамилия"/>
                 <TextField source="first_name" label="Имя"/>
                 <TextField source="patronymic" label="Отчество"/>
-                <TextField source="phone" label="Номер телефона"/>
+                {/* <TextField source="phone" label="Номер телефона"/> */}
             </Datagrid>
         </List>
     </>;
